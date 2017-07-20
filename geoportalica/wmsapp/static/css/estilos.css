@@ -1,0 +1,496 @@
+*{
+	margin:0;
+	padding: 0;
+}
+
+html,body{
+	width:100%;
+	height:100%;
+	box-sizing: border-box;
+	margin:0;
+	padding:0;
+	display:block;	
+}
+
+body{
+	/*overflow-y:hidden;*/
+}
+
+div#map{
+	width: 83%;
+	height: 92%;
+	/*border-width: 1px;*/
+	position:absolute;
+	z-index:10;
+	border: 1px solid black;
+}
+
+div#loginBar{
+	width: 100%;
+	height:4%;
+	border-width: 1px;
+	background-color: #555555;
+}
+
+div#barraMenu{
+	width:100%;
+	position:absolute;
+	margin:0 auto;
+	/*border:1px solid black;*/
+}
+
+.displayOn{
+	display: inline;
+}
+.displayOff{
+	display: none;
+}
+
+/*Panel Contenedor Tabla*/
+div#pnlCntTabla{	
+	/*border:2px solid green;*/
+	width:83%;
+	position:absolute;		
+	z-index:30;
+	display:block;
+	bottom:0%;
+}
+
+/*Panel Icono Tabla*/
+div#pnlIcoTabla{	
+	/*border:1px solid red;*/
+	width:5em;
+	position:relative;		
+	z-index:30;
+	left:40%;
+}
+
+div#pnlIcoTabla>img{
+	height: auto; 
+    width: auto; 
+    max-width: 30px; 
+    max-height: 30px;
+    display:block;
+    margin: auto;
+}
+
+/*Panel Tabla*/
+div#pnlTabla{	
+	border:1px solid grey;
+	width:100%;
+	max-height:300px;
+	overflow-y: auto;
+	position:relative;		
+	z-index:30;	
+	bottom:0%;
+	display: none;	
+}
+
+/*Panel padre*/
+div#pnlPadre{	
+	/*border:3px solid red;*/
+	right:1%;
+	position:absolute;	
+	width:4em;
+	height:30%;
+	z-index:30;
+	top:20%;
+	display:block;
+}
+
+/*Icono Capas*/
+div#pnlIcobm{
+	position:absolute;
+	display:block;
+    z-index: 30; 
+}
+
+div#pnlIcobm>img{
+	border-radius:50%;
+	border: 3px solid #FBFBFB;
+}
+
+div#pnlIcobm > img:hover{
+	cursor:pointer;
+	border-radius:50%;
+	border: 3px solid orange;
+}
+
+.mostrarPanel{
+	visibility: visible;
+}
+.ocultarPanel{
+	visibility: hidden;
+}
+
+.mostrarLista{
+	display: block;
+}
+.ocultarLista{
+	display: none;
+}
+
+/*Panel mapas bases*/
+div#pnlBasemaps{
+	/*border:3px solid black;*/
+	position:absolute;		
+	right:1%;
+	height:22em;
+	top:35%;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;       
+    z-index: 20;
+    display:block;    
+    overflow-y:scroll;	
+
+}
+/*Imagen capas*/
+img#icoBm{
+	max-width: 100%;
+    max-height: 100%;    
+}
+
+/*Lista mapas*/
+div#pnlBasemaps>ul>li img {
+  float: left;
+  margin: 0 15px 0 0;
+  max-width: 30%;
+  max-height: 30%;  
+  border-radius: 50%;
+}
+
+div#pnlBasemaps>ul>li {
+  list-style-type: none;
+  width: 15em;
+  padding: 0.5em;
+  overflow: auto;
+  border-bottom:1px solid #EABDB8; 
+}
+/*==revisar==*/
+div#pnlBasemaps>ul>li div {
+   display: inline-block;
+   vertical-align: middle; 
+   position:relative;
+}
+
+div#pnlBasemaps>ul>li>div span {
+   position:absolute;
+   top:16%;
+}
+/*=========*/
+
+div#pnlBasemaps>ul>li:hover {
+  background: #FBFBFB;
+  cursor: pointer;  
+}
+
+div#pnlBasemaps>ul{
+	
+}
+
+/*=====Boton peligros=====*/
+div#tabPeligro{
+	position: absolute;
+	left:1%;
+	top:50%;
+	z-index:20;
+	border:1px solid black;
+	background: white;
+}
+div#tabPeligro:hover{
+	cursor:pointer;
+}
+
+/*=====Panel lista peligros=====*/
+div#pnlPeligros{	
+	position: absolute;
+	left:1%;
+	top:25%;
+	/*
+	background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border: 1px solid black;
+    border-radius: 5px; 
+    */
+    /*display:inline-block;	*/
+	z-index:21;
+}
+/*
+div#pnlPeligros > ul > li{
+	margin:0;
+	padding:0.4em;	
+	width:auto;
+	height:75px;
+	border: 1px solid grey;
+}
+*/
+/*ul#ulG > li{*/
+/*div#pnlPeligros > ul > li{*/
+ul#ulG > li{
+	margin:0;	
+	padding:0;
+	/*padding:0.4em;*/	
+	width:auto;
+	height:auto;
+	/*border: 1px solid grey;*/	
+}
+
+div#pnlPeligros > ul > li:hover{
+	cursor:pointer;	
+}
+
+img#icoP1,#icoP2,#icoP3,#icoP4,#icoP5{	
+	margin:0;
+	padding:0;	
+	width:4em;
+	display:block;
+	/*border: 1px solid green;*/
+}
+
+/*===Capas bajas temperaturas*/
+ul#ul1 li{
+	margin:0;
+	padding: 1em 0.2em;
+	width:12em;
+	height:auto;
+	border:1px solid #FCFCFC;
+	background: #FFF;
+	opacity:.5;
+}
+
+ul#ul1 li:hover{
+	opacity:1;
+}
+
+ul#ul1 img{	
+	float:right;
+	margin:0;
+	padding:0;
+	width:1em;
+	display:block;
+}
+
+ul#ulG,#ul1,#ul2,#ul3,#ul4,#ul5{
+	float:left;
+	list-style-type:none;	
+}
+
+
+/*#ul1{background-color:green;}*/
+#ul2{background-color:yellow;}
+#ul3{background-color:orange;}
+#ul4{background-color:brown;}
+#ul5{background-color:blue;}
+
+
+/*imgiconopeligro
+img#icoP1,#icoP2,#icoP3,#icoP4,#icoP5{
+	background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	padding-left: 1em;
+	padding-right: 1em;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+img.icoPeligro{
+	width:2em;
+	border:1px solid green;
+}
+
+*/
+
+/*
+div#pnlBasemaps span{
+	border:1px solid black;
+}
+*/
+/*
+.pulse-button {
+
+  position: absolute;
+  z-index: 50;
+  bottom: 50%;
+  left: 30%;
+  width: 40px;
+  height: 40px;
+  border: none;
+  box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
+  border-radius: 50%;
+  background-color: white;
+  background-image: url(../img/impala/fenomenoide.png);
+  background-size:cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  -webkit-animation: pulse 2s infinite cubic-bezier(0.66, 0, 0, 1);
+  -moz-animation: pulse 2s infinite cubic-bezier(0.66, 0, 0, 1);
+  -ms-animation: pulse 2s infinite cubic-bezier(0.66, 0, 0, 1);
+  animation: pulse 2s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+.pulse-button:hover 
+{
+  -webkit-animation: none;-moz-animation: none;-ms-animation: none;animation: none;
+}
+
+@-webkit-keyframes pulse {to {box-shadow: 0 0 0 50px rgba(232, 76, 61, 0);}}
+@-moz-keyframes pulse {to {box-shadow: 0 0 0 50px rgba(232, 76, 61, 0);}}
+@-ms-keyframes pulse {to {box-shadow: 0 0 0 50px rgba(232, 76, 61, 0);}}
+@keyframes pulse {to {box-shadow: 0 0 0 50px rgba(232, 76, 61, 0);}}
+*/
+/*Estilo caja inf*/
+
+.info {
+	left:0;
+	bottom:0;
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;    
+}
+.info h4 {
+    margin: 0 0 5px;
+    color: #777;
+}
+
+/*-----------------*/
+
+/*Legend*/
+.legend {
+	width: auto;
+    line-height: 19px;
+    color: #555;
+    /*border: 0.5px solid grey;*/
+}
+.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    /*opacity: 0.7;*/    
+}
+
+/*-----*/
+
+/*Estilo Tabla Informacion de Capa*/
+.table-fill {
+  background: white;
+  border-radius:3px;
+  border-collapse: collapse;
+  /*height: 320px;*/  
+  margin: auto;
+  /*max-width: 600px;*/
+  padding:5px;
+  width: 100%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  animation: float 5s infinite;
+}
+ 
+th {
+  color:#D5DDE5;;
+  background:#1b1e24;
+  border-bottom:4px solid #9ea7af;
+  border-right: 1px solid #343a45;
+  font-size:21px;
+  font-weight: 100;
+  /*padding:24px;*/
+  padding:0.4em;
+  text-align:left;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  vertical-align:middle;
+}
+
+th:first-child {
+  border-top-left-radius:3px;
+}
+ 
+th:last-child {
+  border-top-right-radius:3px;
+  border-right:none;
+}
+  
+tr {
+  border-top: 1px solid #C1C3D1;
+  border-bottom-: 1px solid #C1C3D1;
+  color:#666B85;
+  font-size:18px;
+  font-weight:normal;
+  text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+ 
+tr:hover td {
+  background:#4E5066;
+  color:#FFFFFF;
+  border-top: 1px solid #22262e;
+  border-bottom: 1px solid #22262e;
+}
+ 
+tr:first-child {
+  border-top:none;
+}
+
+tr:last-child {
+  border-bottom:none;
+}
+ 
+tr:nth-child(odd) td {
+  background:#EBEBEB;
+}
+ 
+tr:nth-child(odd):hover td {
+  background:#4E5066;
+}
+
+tr:last-child td:first-child {
+  border-bottom-left-radius:3px;
+}
+ 
+tr:last-child td:last-child {
+  border-bottom-right-radius:3px;
+}
+ 
+td {
+  background:#FFFFFF;
+  /*padding:20px;*/
+  padding:0.4em;
+  text-align:left;
+  vertical-align:middle;
+  font-weight:300;
+  font-size:18px;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #C1C3D1;
+}
+
+td:last-child {
+  border-right: 0px;
+}
+
+th.text-left {
+  text-align: left;
+}
+
+th.text-center {
+  text-align: center;
+}
+
+th.text-right {
+  text-align: right;
+}
+
+td.text-left {
+  text-align: left;
+}
+
+td.text-center {
+  text-align: center;
+}
+
+td.text-right {
+  text-align: right;
+}
+/*=============================================*/

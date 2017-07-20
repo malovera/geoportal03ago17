@@ -1,0 +1,222 @@
+@charset "UTF-8";
+#cssmenu{ 
+  position: relative;
+  margin:0 auto;
+}
+/* Base Styles */
+#cssmenu > ul,
+#cssmenu > ul li,
+#cssmenu > ul ul {
+  list-style: none;
+  margin: 0;
+  margin: 0;
+  padding: 0;
+}
+/*Ya existe UL
+#cssmenu > ul {
+  position: relative;
+  z-index: 597;
+  border:1px solid red;
+  margin:0 auto;
+}
+*/
+#cssmenu > ul li {
+  float: left;
+  min-height: 1px;
+  line-height: 1.3em;
+  vertical-align: middle;  
+}
+#cssmenu > ul li.hover,
+#cssmenu > ul li:hover {
+  position: relative;
+  z-index: 599;
+  cursor: default;
+}
+#cssmenu > ul ul {
+  visibility: hidden;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 598;
+  width: 100%;
+}
+#cssmenu > ul ul li {
+  float: none;
+}
+#cssmenu > ul ul ul {
+  top: 1px;
+  left: 99%;
+}
+#cssmenu > ul li:hover > ul {
+  visibility: visible;
+} 
+/* Align last drop down RTL */
+#cssmenu > ul > li.last ul ul {
+  left: auto !important;
+  right: 99%;
+}
+#cssmenu > ul > li.last ul {
+  left: auto;
+  right: 0;
+}
+#cssmenu > ul > li.last {
+  text-align: right;
+}
+/* Theme Styles */
+#cssmenu > ul {
+  /*lINEA SUPERIOR*/
+  border-top: 0px solid #A7414A;
+  font-family: Calibri, Tahoma, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+  /*Fondo barra menu*/
+  /*background: #FAFAFA;*/
+  /*background: rgba(255,255,255,0.5);*/
+  /*margin-left:8em;*/
+  /*border: solid 1px green;*/
+  /*
+  background: -moz-linear-gradient(top, #555555 0%, #555555 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #555555), color-stop(100%, #555555));
+  background: -webkit-linear-gradient(top, #555555 0%, #555555 100%);
+  background: linear-gradient(top, #555555 0%, #555555 100%);
+  */
+}
+#cssmenu > ul:before {
+  content: '';
+  display: block;
+}
+#cssmenu > ul:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+#cssmenu > ul li a {
+  display: inline-block;
+  padding: 10px 22px;
+}
+#cssmenu > ul > li.active,
+#cssmenu > ul > li.active:hover {
+  background-color: #FBEDD9;
+}
+/*Capa activa*/
+#cssmenu > ul > li > ul > li.active,
+#cssmenu > ul > li > ul > li.active:hover,
+#cssmenu > ul > li > ul > li > ul > li.active,
+#cssmenu > ul > li > ul > li > ul > li.active:hover,
+#cssmenu > ul > li > ul > li > ul > li > ul > li.active,
+#cssmenu > ul > li > ul > li > ul > li > ul > li.active:hover {
+  background-color: #FBEDD9;
+}
+
+/*
+#cssmenu ul li a:hover{
+  background-color: #FBEDD9; 
+}
+*/
+/*clase active
+.active{
+  background-color: #FBEDD9;
+}
+*/
+#cssmenu > ul > li > a:link,
+#cssmenu > ul > li > a:active,
+#cssmenu > ul > li > a:visited {
+  color: #535353;
+}
+#cssmenu > ul > li > a:hover {
+  /*color: #ffffff;*/
+}
+#cssmenu > ul ul ul {
+  top: 0;
+}
+/*Sub menu*/
+#cssmenu > ul li li {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ebebeb;
+  font-size: 12px;
+  opacity: 1;
+}
+
+#cssmenu > ul > li.hover,
+#cssmenu > ul > li:hover {
+  /*COLOR SOMBREADO*/
+  /*background-color: #DFDFDF;*/
+  background-color: #F0F0F0;
+  
+  -webkit-box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.15);
+  
+}
+#cssmenu > ul a:link,
+#cssmenu > ul a:visited {
+  color: #9a9a9a;
+  text-decoration: none;
+}
+#cssmenu > ul a:hover {
+  color: #9a9a9a;
+}
+#cssmenu > ul a:active {
+  color: #9a9a9a;
+}
+#cssmenu > ul ul {
+  border: 1px solid #CCC \9;
+  -webkit-box-shadow: 0 0px 2px 1px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0px 2px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0px 2px 1px rgba(0, 0, 0, 0.15);
+  width: 150px;
+}
+/*==================*/
+#cssmenu > ul > li {
+    opacity: 1;
+    margin-left:1em;
+    /*filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+#barraMenu{
+  background: rgba(255,255,255,0.5);
+  position: relative;
+  z-index: 500;
+  opacity: 1;
+  /*border: solid 1px;*/
+}
+
+#cssmenu > ul > li{
+  /*background: #D9E5F2;*/
+  border-bottom: 2px solid rgba(84,84,255,0.5);
+}
+
+#cssmenu > ul > li > ul > li:hover,
+#cssmenu > ul > li > ul > li > ul > li:hover,
+#cssmenu > ul > li > ul > li > ul > li > ul > li:hover{
+  background:#F2F6FA;
+
+  -webkit-box-shadow: inset 0 -2px 0 rgba(84,84,255,0.1);
+  -moz-box-shadow: inset 0 -2px 0 rgba(84,84,255,0.1);
+  box-shadow: inset 0 -2px 0 rgba(84,84,255,0.1);
+  /*border: 2px solid rgba(195,195,195,0.5);*/
+}
+
+/*
+li.liGob{  
+  border-bottom: 3px solid #FF6699;
+}
+li.liBio{  
+  border-bottom: 3px solid #B2D26E;
+}
+li.liInf{  
+  border-bottom: 3px solid #C98E6C;
+}
+li.liCat{  
+  border-bottom: 3px solid #3182BD;
+}
+li.liSoc{  
+  border-bottom: 3px solid #707D92;
+}
+li.liEco{  
+  border-bottom: 3px solid #F2B257;
+}
+li.liEst{  
+  border-bottom: 3px solid #CF7FEC;
+}
+*/
