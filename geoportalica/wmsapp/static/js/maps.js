@@ -36,16 +36,31 @@ function initialize(){
 
 	//$("#map").height($(window).height());
 
+	var baseMap1 = L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png',{id: 'MapID', attribution: 'mapboxAttribution'}),
+    baseMap2   = L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',{id: 'MapID', attribution: 'mapboxAttribution'}),
+    baseMap3 = L.tileLayer('http://{s}.tile.thunderforest.com/transport/{z}/{x}/{y}.png',{id: 'MapID', attribution: 'mapboxAttribution'}),
+    baseMap4 = L.tileLayer('http://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',{id: 'MapID', attribution: 'mapboxAttribution'}),
+    baseMap5 = L.tileLayer('http://korona.geog.uni-heidelberg.de/tiles/roads/x={x}&y={y}&z={z}',{id: 'MapID', attribution: 'mapboxAttribution'});
+
 	map = L.map("map", {
 		center: L.latLng(-14.22,-75.52),
 		zoom: 8,
 		zoomControl: false,
-
+		layers: [baseMap1]
 	});
 
+	var baseMaps = {
+    "OpenStreetMap Blanco y Negro": baseMap1,
+    "OpenStreetMap Colores": baseMap2,
+    "Mapa Forestal -Transporte": baseMap3,
+    "OpenTopoMap Relieve": baseMap4,
+    "OpenMapSurfer Caminos": baseMap5
+	};
 
 
-	var tileLayer = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png').addTo(map);
+	L.control.layers(baseMaps).addTo(map);
+
+	//var tileLayer = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',{id: 'MapID', attribution: 'mapboxAttribution'}).addTo(map);
 	//var tileLayer = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
 	//Mostrar Escala
@@ -4939,86 +4954,6 @@ $( "#aGeod" ).click(function() {
 	else{
 		map.removeLayer(aGeod);
 	};
-});
-
-//=====CAMBIO DE BASES MAPAS=====
-
-//Mapa base 1
-$( "#liM1" ).click(function() {
- 	L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png').addTo(map);
-});
-
-//Mapa base 2
-$( "#liM2" ).click(function() {
- 	L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png').addTo(map);
-});
-
-//Mapa base 3
-$( "#liM3" ).click(function() {
- 	L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}').addTo(map);
-});
-
-//Mapa base 4
-$( "#liM4" ).click(function() {
- 	L.tileLayer('http://korona.geog.uni-heidelberg.de/tiles/roads/x={x}&y={y}&z={z}').addTo(map);
-});
-
-//Mapa base 5 - Mapa Contraste Oscuro
-$( "#liM5" ).click(function() {
- 	L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png').addTo(map);
-});
-
-//Mapa base 6 (imagen drone)
-$( "#liM6" ).click(function() {
- 	L.tileLayer('http://127.0.0.1:8080/tileserver/tileserver.php?/index.json?/mb_CHANCHAJALLA/{z}/{x}/{y}.png',
- 		{
- 			minZoom: 7,
- 			maxZoom: 22
- 		}).addTo(map);
-});
-
-//Mapa base 7 - HERE.hybridDay
-$( "#liM7" ).click(function() {
- 	L.tileLayer('http://{s}.{base}.maps.cit.api.here.com/maptile/2.1/{type}/{mapID}/hybrid.day/{z}/{x}/{y}/{size}/{format}?app_id={app_id}&app_code={app_code}&lg={language}', {
-	attribution: 'Map &copy; 1987-2014 <a href="http://developer.here.com">HERE</a>',
-	subdomains: '1234',
-	mapID: 'newest',
-	app_id: '<your app_id>',
-	app_code: '<your app_code>',
-	base: 'aerial',
-	maxZoom: 20,
-	type: 'maptile',
-	language: 'eng',
-	format: 'png8',
-	size: '256'
-	}).addTo(map);
-});
-
-//Mapa base 8 - OpenStreetMap.HOT
-$( "#liM8" ).click(function() {
- 	L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
- 		{
- 			minZoom: 7,
- 			maxZoom: 22
- 		}).addTo(map);
-});
-
-//Mapa base 9 - OpenTopoMap
-$( "#liM9" ).click(function() {
- 	L.tileLayer('http://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
- 		{
- 			minZoom: 7,
- 			maxZoom: 22
- 		}).addTo(map);
-});
-
-//Mapa base 10 - Thunderforest.Transport
-$( "#liM10" ).click(function() {
- 	L.tileLayer('http://{s}.tile.thunderforest.com/transport/{z}/{x}/{y}.png',
- 		{
- 			minZoom: 7,
- 			maxZoom: 22
- 		}).addTo(map);
 });
 
 //Icono para mostrar Tabla Informacion Capas
